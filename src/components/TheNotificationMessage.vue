@@ -6,29 +6,41 @@ export default {
     type: {
       type: String,
       required: false,
-      default: 'info'
+      default: 'light'
     },
     header: {
       type: String,
       required: false,
       default: 'Mensaje'
+    },
+    /* hidden: {
+      type: Boolean,
+      required: false,
+      default: false
+    } */
+  },
+
+  data() {
+    return {
+      hidden: false
     }
   },
 
-
-  /* methods: {
+  methods: {
     closeNotification() {
       console.log('Cerrar!');
-
+      this.hidden = true;
+      // emmit
+      this.$emit('toggle')
     }
-  } */
+  }
 
 }
 </script>
 
 <template>
   <!--Container-->
-  <div id="panel" class="container ">
+  <div id="panel" class="container " v-show="! this.hidden">
     <div :class="{
         'p-4 border rounded-lg': true,
         'bg-white border-gray-300 text-black' : type == 'light',
@@ -40,7 +52,8 @@ export default {
     }">
       <div class="flex justify-between items-start">
         <h2 class="font-bold text-lg mb-2">{{ header }}</h2>
-        <div @click="$emit('toggle')" class="p-2 cursor-pointer hover:scale-125">&times;</div>
+        <!--<div @click="$emit('toggle', true)" class="p-2 cursor-pointer hover:scale-125">&times;</div>-->
+        <div @click="closeNotification" class="p-2 cursor-pointer hover:scale-125">&times;</div>
       </div>
       <slot />
     </div>

@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
 import GitUserProfile from "./components/GitUserProfile.vue";
 import TheNotification from "./components/TheNotification.vue";
+import CompositionVueSchool from "./components/CompositionVueSchool.vue";
 </script>
 
 <template>
@@ -24,6 +25,10 @@ import TheNotification from "./components/TheNotification.vue";
         <RouterLink to="/contact">Contact</RouterLink>
         <RouterLink to="/team">Team</RouterLink>
       </nav>
+
+      <div class="my-8 py-8 border-y-2">
+        <CompositionVueSchool></CompositionVueSchool>
+      </div>
 
       <TheNotification></TheNotification>
       <git-user-profile></git-user-profile>
