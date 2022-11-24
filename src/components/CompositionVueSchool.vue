@@ -57,6 +57,11 @@ const characterCounter = computed(() => {
 // Nota. Usamos 'spread operator' "..." para hacer un clon/copia del array ya que la funcion reverse() altera fisicamente el array y no queremos eso
 const reversedItems = computed(() => [...items.value].reverse());
 
+/**
+ * REVISAR EL USO Y LA DIFERENCIA DE REF Y REACTIVE EN LA DEFINICION DE VARIABLES REACTIVAS
+ * TIP. El uso de reactive no funciona en tipos primitivos.
+ */
+
 </script>
 
 <template>
