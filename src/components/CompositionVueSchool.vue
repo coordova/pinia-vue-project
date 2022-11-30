@@ -67,7 +67,7 @@ const reversedItems = computed(() => [...items.value].reverse());
 <template>
   <div class="space-y-4">
     <div class="flex justify-between">
-      <h1 class="font-bold text-lg">{{ header }}</h1>
+      <h1 class="font-bold text-2xl">{{ header }}</h1>
       <div class="flex space-x-4 mb-4">
         <button v-if="editing" @click="doEdit(false)" class="btn btn-secondary">Cancel</button>
         <button v-else @click="doEdit(true)" class="btn btn-primary">Add Item</button>

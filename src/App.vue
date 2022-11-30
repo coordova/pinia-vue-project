@@ -7,14 +7,14 @@ import CompositionVueSchool from "./components/CompositionVueSchool.vue";
 </script>
 
 <template>
-  <header>
-    <!--<img
+  <!--<header>
+    <img
       alt="Vue logo"
       class="logo"
       src="@/assets/logo.svg"
       width="125"
       height="125"
-    />-->
+    />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
@@ -33,7 +33,7 @@ import CompositionVueSchool from "./components/CompositionVueSchool.vue";
       <TheNotification></TheNotification>
       <git-user-profile></git-user-profile>
     </div>
-  </header>
+  </header>-->
 
   <RouterView />
 </template>
