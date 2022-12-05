@@ -7,7 +7,7 @@
 
   // import el dedicated Pinia store (TeamStore) for managing the state for a team
   import {useTeamStore} from "@/stores/TeamStore";
-  import Modal from "@/components/Teams/Modal.vue";
+  // import Modal from "@/components/Teams/Modal.vue";
   import {ref} from "vue";
 
   // lo asignamos a una variable
@@ -22,7 +22,7 @@
     team.grow(20);
   }, 1000);
 
-  let showModal = ref(false);
+  // let showModal = ref(false);
   // console.log(team)
 </script>
 
@@ -30,7 +30,8 @@
   <div class="container mx-auto p-4">
 
     <!--<TeamHeader :team="team" />-->
-    <TeamHeader @add="showModal = true" />
+    <!--<TeamHeader @add="showModal = true" />-->
+    <TeamHeader />
 
     <div class="place-self-center flex flex-col gap-y-3 mx-auto" style="width: 725px">
 
@@ -42,25 +43,27 @@
     <!--<TeamFooter :team="team" />-->
     <TeamFooter />
 
-    <Modal :show="showModal" @close="showModal=false">
-      <template #header>
-        <h3 class="font-semibold text-xl">Add member</h3>
-      </template>
+    <!--<Teleport to="body">
+      <Modal :show="showModal" @close="showModal=false">
+        <template #header>
+          <h3 class="font-semibold text-xl">Add member</h3>
+        </template>
 
-      <template #default>
-        <p>Need to add a new member to your team?</p>
-        <form class="mt-6">
-          <div class="flex gap-2">
-            <input type="email" placeholder="Email address..." class="flex-1 py-3">
-            <button class="btn btn-secondary">Add</button>
-          </div>
-        </form>
-      </template>
+        <template #default>
+          <p>Need to add a new member to your team?</p>
+          <form class="mt-6">
+            <div class="flex gap-2">
+              <input type="email" placeholder="Email address..." class="flex-1 py-3">
+              <button class="btn btn-secondary">Add</button>
+            </div>
+          </form>
+        </template>
 
-      <!--<template #footer>
-        Override the footer
-      </template>-->
-    </Modal>
+        &lt;!&ndash;<template #footer>
+          Override the footer
+        </template>&ndash;&gt;
+      </Modal>
+    </Teleport>-->
 
   </div>
 
