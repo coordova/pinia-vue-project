@@ -78,7 +78,7 @@
 
 /*# Transiciones */
 .modal-enter-active, .modal-leave-active {
-  transition: opacity 1s;
+  transition: opacity 0.3s;
 }
 
 .modal-enter-from, .modal-leave-to {
